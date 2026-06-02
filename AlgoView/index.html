@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AlgoView — Beautiful interactive algorithm visualizer. Learn sorting, searching, graph algorithms and data structures through stunning animations." />
+  <title>AlgoView — Algorithm Visualizer</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<!-- Animated background -->
+<div class="bg-mesh" aria-hidden="true"></div>
+
+<!-- ── Navigation Bar ── -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="navbar-logo" id="nav-logo">
+    <div class="logo-icon" aria-hidden="true">⚡</div>
+    <span class="logo-text">Algo<span>View</span></span>
+  </a>
+
+  <div class="navbar-search" role="search">
+    <span class="search-icon" aria-hidden="true">🔍</span>
+    <input
+      type="search"
+      id="global-search"
+      placeholder="Search algorithms... (e.g. Bubble Sort, BFS)"
+      autocomplete="off"
+      aria-label="Search algorithms"
+    />
+  </div>
+
+  <div class="navbar-actions">
+    <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-ghost" id="nav-github" aria-label="GitHub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+      </svg>
+    </a>
+    <button class="btn btn-primary" id="nav-start-btn">
+      ⚡ Start Visualizing
+    </button>
+  </div>
+</nav>
+
+<!-- ── Hero Section ── -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-eyebrow" aria-label="Tag">
+    ✨ Interactive Algorithm Learning
+  </div>
+
+  <h1 class="hero-title" id="hero-title">
+    Visualize Algorithms<br>
+    <span class="gradient-text">Like Never Before</span>
+  </h1>
+
+  <p class="hero-subtitle">
+    Explore sorting, searching, graph algorithms, and data structures through
+    beautiful step-by-step animations with real-time code highlighting.
+  </p>
+
+  <div class="hero-cta">
+    <button class="btn btn-primary" id="hero-explore-btn" onclick="document.getElementById('algorithms-section').scrollIntoView({behavior:'smooth'})">
+      🚀 Explore Algorithms
+    </button>
+    <a href="visualizer.html?algo=bubble-sort" class="btn btn-secondary" id="hero-demo-btn">
+      ▶ Watch Demo
+    </a>
+  </div>
+
+  <div class="hero-stats" role="list" aria-label="Statistics">
+    <div class="stat-item" role="listitem">
+      <div class="stat-value">16+</div>
+      <div class="stat-label">Algorithms</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-value">5</div>
+      <div class="stat-label">Categories</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-value">60fps</div>
+      <div class="stat-label">Animations</div>
+    </div>
+    <div class="stat-item" role="listitem">
+      <div class="stat-value">Free</div>
+      <div class="stat-label">Forever</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Category Filter Tabs ── -->
+<div class="category-tabs" role="tablist" aria-label="Algorithm categories" id="category-tabs">
+  <button class="tab-btn active" role="tab" aria-selected="true" data-category="all" id="tab-all">
+    🌐 All <span class="tab-count">16</span>
+  </button>
+  <button class="tab-btn" role="tab" aria-selected="false" data-category="sorting" id="tab-sorting">
+    📊 Sorting <span class="tab-count">6</span>
+  </button>
+  <button class="tab-btn" role="tab" aria-selected="false" data-category="searching" id="tab-searching">
+    🔍 Searching <span class="tab-count">2</span>
+  </button>
+  <button class="tab-btn" role="tab" aria-selected="false" data-category="data-structure" id="tab-ds">
+    🏗 Data Structures <span class="tab-count">4</span>
+  </button>
+  <button class="tab-btn" role="tab" aria-selected="false" data-category="graph" id="tab-graph">
+    🕸 Graph Algorithms <span class="tab-count">3</span>
+  </button>
+  <button class="tab-btn" role="tab" aria-selected="false" data-category="dynamic" id="tab-dp">
+    🧩 Dynamic Programming <span class="tab-count">1</span>
+  </button>
+</div>
+
+<!-- ── Algorithms Section ── -->
+<main class="algorithms-section" id="algorithms-section" aria-label="Algorithm catalog">
+  <div class="section-header">
+    <h2 class="section-title" id="section-title-el">All Algorithms</h2>
+    <span class="section-count" id="section-count-el">16 algorithms</span>
+  </div>
+  <div class="algorithms-grid" id="algorithms-grid" role="list" aria-label="Algorithm list">
+    <!-- Cards injected by JS -->
+  </div>
+</main>
+
+<!-- ── Footer ── -->
+<footer class="footer" role="contentinfo">
+  <p>
+    Built with ❤️ for learners worldwide &middot;
+    Inspired by <a href="https://algorithm-visualizer.org" target="_blank" rel="noopener">algorithm-visualizer.org</a>
+    &amp; <a href="https://visualgo.net" target="_blank" rel="noopener">visualgo.net</a>
+  </p>
+</footer>
+
+<script src="js/algorithms/registry.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

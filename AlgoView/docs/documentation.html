@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>AlgoView — Documentation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',sans-serif;background:#fff;color:#1e1b4b;line-height:1.7;font-size:14px}
+  .page{max-width:900px;margin:0 auto;padding:48px 40px}
+  h1{font-size:2.4rem;font-weight:800;color:#1e1b4b;margin-bottom:6px}
+  h2{font-size:1.4rem;font-weight:700;color:#4f46e5;margin:36px 0 12px;padding-bottom:6px;border-bottom:2px solid #e0e7ff}
+  h3{font-size:1rem;font-weight:700;color:#1e1b4b;margin:20px 0 8px}
+  p{margin-bottom:10px;color:#374151}
+  code{font-family:'JetBrains Mono',monospace;background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:0.85em;color:#7c3aed}
+  pre{font-family:'JetBrains Mono',monospace;background:#1e1b4b;color:#e0e7ff;padding:16px;border-radius:8px;font-size:0.82em;overflow-x:auto;margin:10px 0}
+  .cover{text-align:center;padding:60px 0 40px;border-bottom:3px solid #e0e7ff;margin-bottom:40px}
+  .cover .badge{display:inline-block;background:#4f46e5;color:#fff;padding:4px 14px;border-radius:20px;font-size:0.8rem;font-weight:600;margin-bottom:16px}
+  .cover p{color:#6b7280;font-size:1rem;max-width:600px;margin:12px auto 0}
+  .stats{display:flex;gap:24px;justify-content:center;margin-top:24px;flex-wrap:wrap}
+  .stat{text-align:center}
+  .stat .num{font-size:2rem;font-weight:800;color:#4f46e5}
+  .stat .lbl{font-size:0.78rem;color:#6b7280;text-transform:uppercase;letter-spacing:.05em}
+  table{width:100%;border-collapse:collapse;margin:12px 0}
+  th{background:#4f46e5;color:#fff;padding:8px 12px;text-align:left;font-size:0.85rem}
+  td{padding:8px 12px;border-bottom:1px solid #e0e7ff;font-size:0.85rem}
+  tr:nth-child(even) td{background:#f5f3ff}
+  .algo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0}
+  .algo-card{border:1px solid #e0e7ff;border-radius:10px;padding:14px;background:#fafafa}
+  .algo-card h4{font-size:0.95rem;font-weight:700;color:#4f46e5;margin-bottom:4px}
+  .algo-card p{font-size:0.8rem;color:#6b7280;margin:0}
+  .algo-card .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+  .tag{background:#e0e7ff;color:#4f46e5;padding:2px 8px;border-radius:10px;font-size:0.72rem;font-weight:600}
+  .complexity{font-size:0.78rem;color:#374151;margin-top:6px}
+  .kbd{display:inline-block;background:#e5e7eb;border:1px solid #d1d5db;border-radius:4px;padding:2px 8px;font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:#1f2937}
+  .note{background:#eff6ff;border-left:4px solid #3b82f6;padding:12px 16px;border-radius:0 8px 8px 0;margin:12px 0;font-size:0.85rem;color:#1e40af}
+  .section-intro{color:#6b7280;margin-bottom:16px;font-size:0.9rem}
+  ul{padding-left:20px;margin-bottom:10px}
+  li{margin-bottom:4px;color:#374151;font-size:0.9rem}
+  .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+  .feature-item{display:flex;align-items:flex-start;gap:8px;font-size:0.88rem}
+  .feature-icon{font-size:1rem;flex-shrink:0}
+  .arch-box{border:1px solid #e0e7ff;border-radius:8px;padding:16px;margin:12px 0;background:#f9f8ff}
+  .file-tree{font-family:'JetBrains Mono',monospace;font-size:0.82rem;color:#374151;line-height:2}
+  @media print{
+    body{font-size:12px}
+    .page{padding:32px 28px}
+    h1{font-size:2rem}
+    h2{font-size:1.2rem}
+    .algo-grid{grid-template-columns:1fr 1fr}
+    .cover{padding:40px 0 30px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="badge">⚡ AlgoView</div>
+    <h1>AlgoView Documentation</h1>
+    <p>An interactive algorithm visualizer for learning sorting, searching, graph algorithms, and data structures through step-by-step animations.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">16</div><div class="lbl">Algorithms</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">Categories</div></div>
+      <div class="stat"><div class="num">2</div><div class="lbl">Pages</div></div>
+      <div class="stat"><div class="num">0</div><div class="lbl">Dependencies</div></div>
+    </div>
+  </div>
+
+  <!-- 1. Overview -->
+  <h2>1. Overview</h2>
+  <p>AlgoView is a pure front-end web application with no backend, no build step, and no external dependencies. It runs entirely in the browser by opening <code>index.html</code> with a local server (e.g., VS Code Live Server).</p>
+  <div class="note">No installation required. No npm install. No backend server. Just open index.html in a browser.</div>
+
+  <h3>How to Run</h3>
+  <ul>
+    <li>Install <strong>Live Server</strong> extension in VS Code (by Ritwick Dey).</li>
+    <li>Right-click <code>index.html</code> → <strong>Open with Live Server</strong>.</li>
+    <li>Or simply double-click <code>index.html</code> to open directly in your browser.</li>
+  </ul>
+
+  <!-- 2. Project Structure -->
+  <h2>2. Project Structure</h2>
+  <div class="arch-box">
+    <div class="file-tree">
+AlgoView/<br>
+├── index.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Home / catalog page<br>
+├── visualizer.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Algorithm visualizer page<br>
+├── css/<br>
+│&nbsp;&nbsp;&nbsp;├── main.css &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Shared design system &amp; tokens<br>
+│&nbsp;&nbsp;&nbsp;├── home.css &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Home page styles<br>
+│&nbsp;&nbsp;&nbsp;└── visualizer.css &nbsp;&nbsp;← Visualizer page styles<br>
+├── js/<br>
+│&nbsp;&nbsp;&nbsp;├── home.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← Home page logic (search, filter, cards)<br>
+│&nbsp;&nbsp;&nbsp;├── visualizer.js &nbsp;&nbsp;&nbsp;← Main visualizer controller<br>
+│&nbsp;&nbsp;&nbsp;├── algorithms/<br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── registry.js &nbsp;&nbsp;&nbsp;&nbsp;← Central algorithm metadata registry<br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── sorting.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← 6 sorting algorithm generators<br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── searching.js &nbsp;&nbsp;&nbsp;← 2 searching algorithm generators<br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├── data-structures.js ← Stack, Queue, Linked List, BST<br>
+│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;└── graph.js &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;← BFS, DFS, Dijkstra, Fibonacci DP<br>
+│&nbsp;&nbsp;&nbsp;└── renderer/<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── array-renderer.js &nbsp;← Canvas rendering for arrays/DS<br>
+│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── graph-renderer.js &nbsp;← Canvas rendering for graphs/trees<br>
+└── docs/<br>
+&nbsp;&nbsp;&nbsp;&nbsp;└── documentation.html &nbsp;← This file
+    </div>
+  </div>
+
+  <!-- 3. Pages -->
+  <h2>3. Pages</h2>
+
+  <h3>3.1 Home Page (index.html)</h3>
+  <p class="section-intro">The landing/catalog page where users discover algorithms.</p>
+  <div class="feature-list">
+    <div class="feature-item"><span class="feature-icon">🔍</span><div><strong>Global Search</strong> — Live search by name, description, or tags across all 16 algorithms.</div></div>
+    <div class="feature-item"><span class="feature-icon">📑</span><div><strong>Category Tabs</strong> — Filter by All, Sorting, Searching, Data Structures, Graph, or Dynamic Programming.</div></div>
+    <div class="feature-item"><span class="feature-icon">🃏</span><div><strong>Algorithm Cards</strong> — Each card shows name, category badge, short description, avg. time &amp; space complexity, and tags.</div></div>
+    <div class="feature-item"><span class="feature-icon">✨</span><div><strong>Entrance Animations</strong> — Cards animate in with a staggered fade/slide effect on load.</div></div>
+    <div class="feature-item"><span class="feature-icon">🔎</span><div><strong>Search Highlighting</strong> — Matched keyword is highlighted in the card name.</div></div>
+    <div class="feature-item"><span class="feature-icon">📊</span><div><strong>Stats Bar</strong> — Hero section shows 16+ algorithms, 5 categories, 60fps, Free.</div></div>
+  </div>
+
+  <h3>3.2 Visualizer Page (visualizer.html)</h3>
+  <p class="section-intro">The main interactive visualization environment with a three-panel layout.</p>
+
+  <table>
+    <thead><tr><th>Panel</th><th>Contents</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Left Sidebar</strong></td><td>Searchable list of all algorithms grouped by category. Click any item to load it instantly.</td></tr>
+      <tr><td><strong>Center Canvas</strong></td><td>HTML5 Canvas visualization, step-info overlay, comparison/swap counters, color legend, playback controls.</td></tr>
+      <tr><td><strong>Right Panel</strong></td><td>Two tabs: <em>Code</em> (pseudocode with live line highlighting) and <em>Info</em> (step log, complexity table, description).</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 4. Algorithm Catalog -->
+  <h2>4. Algorithm Catalog</h2>
+
+  <h3>4.1 Sorting (6 algorithms)</h3>
+  <div class="algo-grid">
+    <div class="algo-card">
+      <h4>🫧 Bubble Sort</h4>
+      <p>Repeatedly compares and swaps adjacent elements until sorted.</p>
+      <div class="complexity">Best: O(n) &nbsp;|&nbsp; Avg: O(n²) &nbsp;|&nbsp; Space: O(1)</div>
+      <div class="tags"><span class="tag">stable</span><span class="tag">in-place</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🎯 Selection Sort</h4>
+      <p>Finds the minimum in the unsorted part and places it at the front.</p>
+      <div class="complexity">Best/Avg/Worst: O(n²) &nbsp;|&nbsp; Space: O(1)</div>
+      <div class="tags"><span class="tag">unstable</span><span class="tag">in-place</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🃏 Insertion Sort</h4>
+      <p>Builds a sorted array one element at a time by inserting into position.</p>
+      <div class="complexity">Best: O(n) &nbsp;|&nbsp; Avg: O(n²) &nbsp;|&nbsp; Space: O(1)</div>
+      <div class="tags"><span class="tag">stable</span><span class="tag">adaptive</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🔀 Merge Sort</h4>
+      <p>Divide-and-conquer: splits, sorts recursively, then merges.</p>
+      <div class="complexity">Best/Avg/Worst: O(n log n) &nbsp;|&nbsp; Space: O(n)</div>
+      <div class="tags"><span class="tag">stable</span><span class="tag">recursive</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>⚡ Quick Sort</h4>
+      <p>Picks a pivot, partitions the array, then recurses on sub-arrays.</p>
+      <div class="complexity">Avg: O(n log n) &nbsp;|&nbsp; Worst: O(n²) &nbsp;|&nbsp; Space: O(log n)</div>
+      <div class="tags"><span class="tag">unstable</span><span class="tag">in-place</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🌳 Heap Sort</h4>
+      <p>Builds a max-heap, then repeatedly extracts the maximum.</p>
+      <div class="complexity">Best/Avg/Worst: O(n log n) &nbsp;|&nbsp; Space: O(1)</div>
+      <div class="tags"><span class="tag">unstable</span><span class="tag">in-place</span></div>
+    </div>
+  </div>
+
+  <h3>4.2 Searching (2 algorithms)</h3>
+  <div class="algo-grid">
+    <div class="algo-card">
+      <h4>🔦 Linear Search</h4>
+      <p>Scans each element sequentially until the target is found or exhausted.</p>
+      <div class="complexity">Best: O(1) &nbsp;|&nbsp; Avg/Worst: O(n) &nbsp;|&nbsp; Space: O(1)</div>
+      <div class="tags"><span class="tag">sequential</span><span class="tag">simple</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🎯 Binary Search</h4>
+      <p>Halves the search space each step. Requires a sorted array.</p>
+      <div class="complexity">Best: O(1) &nbsp;|&nbsp; Avg/Worst: O(log n) &nbsp;|&nbsp; Space: O(1)</div>
+      <div class="tags"><span class="tag">sorted</span><span class="tag">fast</span></div>
+    </div>
+  </div>
+
+  <h3>4.3 Data Structures (4)</h3>
+  <div class="algo-grid">
+    <div class="algo-card">
+      <h4>📚 Stack</h4>
+      <p>LIFO structure. Demonstrates push, pop, and peek operations.</p>
+      <div class="complexity">All operations: O(1) &nbsp;|&nbsp; Space: O(n)</div>
+      <div class="tags"><span class="tag">LIFO</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🚌 Queue</h4>
+      <p>FIFO structure. Demonstrates enqueue and dequeue operations.</p>
+      <div class="complexity">All operations: O(1) &nbsp;|&nbsp; Space: O(n)</div>
+      <div class="tags"><span class="tag">FIFO</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🔗 Linked List</h4>
+      <p>Nodes linked by pointers. Demonstrates append, insert, and delete.</p>
+      <div class="complexity">Access: O(n) &nbsp;|&nbsp; Insert at node: O(1)</div>
+      <div class="tags"><span class="tag">dynamic</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🌲 Binary Search Tree</h4>
+      <p>Hierarchical tree with insert and search operations visualized.</p>
+      <div class="complexity">Avg: O(log n) &nbsp;|&nbsp; Worst: O(n)</div>
+      <div class="tags"><span class="tag">BST</span><span class="tag">tree</span></div>
+    </div>
+  </div>
+
+  <h3>4.4 Graph Algorithms (3)</h3>
+  <div class="algo-grid">
+    <div class="algo-card">
+      <h4>🌊 Breadth-First Search</h4>
+      <p>Explores level-by-level using a queue. Finds shortest path in unweighted graphs.</p>
+      <div class="complexity">O(V+E) time &nbsp;|&nbsp; O(V) space</div>
+      <div class="tags"><span class="tag">traversal</span><span class="tag">shortest-path</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🕳 Depth-First Search</h4>
+      <p>Explores as deep as possible before backtracking. Uses a stack/recursion.</p>
+      <div class="complexity">O(V+E) time &nbsp;|&nbsp; O(V) space</div>
+      <div class="tags"><span class="tag">traversal</span><span class="tag">recursive</span></div>
+    </div>
+    <div class="algo-card">
+      <h4>🗺 Dijkstra's Algorithm</h4>
+      <p>Finds shortest paths from source in a weighted graph using a greedy approach.</p>
+      <div class="complexity">O((V+E) log V) &nbsp;|&nbsp; O(V) space</div>
+      <div class="tags"><span class="tag">weighted</span><span class="tag">greedy</span></div>
+    </div>
+    <div class="algo-card" style="grid-column:1/-1">
+      <h4>🧩 Fibonacci (Dynamic Programming)</h4>
+      <p>Computes Fibonacci numbers using memoization (DP table), showing how overlapping subproblems are cached to avoid recomputation.</p>
+      <div class="complexity">O(n) time &nbsp;|&nbsp; O(n) space</div>
+      <div class="tags"><span class="tag">DP</span><span class="tag">memoization</span></div>
+    </div>
+  </div>
+
+  <!-- 5. Visualizer Features -->
+  <h2>5. Visualizer Features</h2>
+
+  <h3>5.1 Playback Controls</h3>
+  <table>
+    <thead><tr><th>Control</th><th>Action</th><th>Keyboard Shortcut</th></tr></thead>
+    <tbody>
+      <tr><td>▶ / ⏸ Play/Pause</td><td>Start or pause the animation</td><td><span class="kbd">Space</span></td></tr>
+      <tr><td>⟳ Restart</td><td>Reset to the first frame</td><td><span class="kbd">R</span></td></tr>
+      <tr><td>⏮ Step Back</td><td>Go to the previous frame</td><td><span class="kbd">←</span></td></tr>
+      <tr><td>⏭ Step Forward</td><td>Go to the next frame</td><td><span class="kbd">→</span></td></tr>
+      <tr><td>Speed Slider</td><td>Adjust speed from 1x (slow, 800ms) to 10x (fast, 50ms)</td><td>—</td></tr>
+    </tbody>
+  </table>
+
+  <h3>5.2 Custom Array Input</h3>
+  <ul>
+    <li>Type a comma-separated list of numbers (e.g. <code>64, 34, 25, 12, 22</code>) and click <strong>Apply</strong>.</li>
+    <li>Maximum of <strong>20 values</strong> are accepted.</li>
+    <li>Click <strong>🎲 Random</strong> to generate a random array of 6–13 elements.</li>
+    <li>For searching algorithms, the input field accepts the <strong>target value</strong>.</li>
+  </ul>
+
+  <h3>5.3 Code Panel</h3>
+  <ul>
+    <li>Displays pseudocode for the currently selected algorithm.</li>
+    <li>The <strong>active line is highlighted in real-time</strong> as each frame plays.</li>
+    <li>Automatically scrolls to keep the highlighted line in view.</li>
+  </ul>
+
+  <h3>5.4 Info Panel</h3>
+  <ul>
+    <li><strong>Step Log</strong> — Keeps a running log of the last 30 step messages explaining what is happening.</li>
+    <li><strong>Complexity Table</strong> — Shows Best / Average / Worst time and space complexity for the selected algorithm.</li>
+    <li><strong>About</strong> — A plain-English description of how the algorithm works.</li>
+  </ul>
+
+  <h3>5.5 Canvas Overlays</h3>
+  <ul>
+    <li><strong>Comparison counter</strong> — Tracks total comparisons made so far.</li>
+    <li><strong>Swap counter</strong> — Tracks total swaps made (sorting only).</li>
+    <li><strong>Step indicator</strong> — Shows current step out of total (e.g. <code>5 / 42</code>).</li>
+    <li><strong>Progress bar</strong> — Visual progress across the full animation.</li>
+    <li><strong>Color legend</strong> — Explains bar/node colors (Default, Comparing, Swapping, Sorted).</li>
+  </ul>
+
+  <!-- 6. Color Legend -->
+  <h2>6. Color Legend</h2>
+  <table>
+    <thead><tr><th>Color</th><th>State</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>🟣 Purple</td><td>Default</td><td>Unsorted / unvisited element</td></tr>
+      <tr><td>🔵 Cyan</td><td>Comparing</td><td>Elements currently being compared</td></tr>
+      <tr><td>🟡 Amber</td><td>Swapping / Active</td><td>Elements being swapped or moved</td></tr>
+      <tr><td>🟢 Green</td><td>Sorted / Visited / Found</td><td>Element in final position or successfully found</td></tr>
+      <tr><td>🔴 Red / Gray</td><td>Eliminated</td><td>Search range eliminated (binary search)</td></tr>
+      <tr><td>🟠 Orange</td><td>Pivot</td><td>Pivot element in Quick Sort</td></tr>
+    </tbody>
+  </table>
+
+  <!-- 7. Architecture -->
+  <h2>7. Technical Architecture</h2>
+
+  <h3>7.1 Generator-Based Frame System</h3>
+  <p>Every algorithm is implemented as a JavaScript <strong>generator function</strong>. Each <code>yield</code> statement emits a <em>frame</em> — a snapshot of the data structure's state at that moment. The visualizer pre-collects all frames into an array, enabling:</p>
+  <ul>
+    <li>Instant step-forward and step-backward navigation</li>
+    <li>Smooth playback at any speed without re-running the algorithm</li>
+    <li>Accurate step counter and progress bar</li>
+  </ul>
+
+  <pre>// Example frame structure (sorting)
+{
+  array:       [64, 25, 34, 12],   // current array values
+  states:      ['sorted','comparing','default','comparing'],
+  comparisons: 5,
+  swaps:       2,
+  codeLine:    3,                  // which pseudocode line to highlight
+  message:     "Comparing 25 with 34",
+  type:        'sorting'
+}</pre>
+
+  <h3>7.2 Renderer System</h3>
+  <p>Two canvas renderers handle all visual output:</p>
+  <ul>
+    <li><strong>ArrayRenderer</strong> — Draws bar charts for sorting/searching, horizontal nodes for Stack/Queue/Linked List, and tree layouts for BST.</li>
+    <li><strong>GraphRenderer</strong> — Draws nodes and edges for BFS, DFS, and Dijkstra on a fixed-position 8-node graph. Also renders the Fibonacci DP table.</li>
+  </ul>
+  <p>Renderers are called on every frame via <code>ResizeObserver</code> so the canvas always fills its container correctly.</p>
+
+  <h3>7.3 Algorithm Registry</h3>
+  <p>All algorithm metadata is stored in <code>registry.js</code> as the global <code>ALGO_REGISTRY</code> array. Each entry contains: <code>id</code>, <code>name</code>, <code>category</code>, <code>emoji</code>, <code>description</code>, <code>complexity</code>, <code>tags</code>, and <code>type</code>. Both the home page and visualizer sidebar read from this single source of truth.</p>
+
+  <h3>7.4 URL State</h3>
+  <p>When an algorithm is selected, the URL updates to <code>?algo=bubble-sort</code> (etc.) via <code>history.replaceState</code>. This means you can share or bookmark a direct link to any algorithm.</p>
+
+  <!-- 8. Keyboard Shortcuts Summary -->
+  <h2>8. Keyboard Shortcuts</h2>
+  <table>
+    <thead><tr><th>Key</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td><span class="kbd">Space</span></td><td>Play / Pause animation</td></tr>
+      <tr><td><span class="kbd">→</span></td><td>Step forward one frame</td></tr>
+      <tr><td><span class="kbd">←</span></td><td>Step backward one frame</td></tr>
+      <tr><td><span class="kbd">R</span></td><td>Restart the algorithm from the beginning</td></tr>
+    </tbody>
+  </table>
+  <div class="note">Shortcuts are disabled when focus is inside a text input field.</div>
+
+  <!-- Footer -->
+  <div style="margin-top:60px;padding-top:20px;border-top:2px solid #e0e7ff;text-align:center;color:#9ca3af;font-size:0.8rem">
+    <p>AlgoView &nbsp;·&nbsp; Pure HTML / CSS / JavaScript &nbsp;·&nbsp; No frameworks &nbsp;·&nbsp; No backend &nbsp;·&nbsp; Free forever</p>
+    <p style="margin-top:4px">Inspired by algorithm-visualizer.org &amp; visualgo.net</p>
+  </div>
+
+</div>
+</body>
+</html>
